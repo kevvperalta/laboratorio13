@@ -1,0 +1,16 @@
+function filtrarYTransformar(arr) {
+    return arr
+        .filter(numero => numero >= 0) // para eliminar valores negativos
+        .map(numero => numero * numero) // elevar al cuadrado
+        .reduce((suma, numero) => suma + numero, 0); // suma todos
+}
+
+alert("Ejercicio 4:");
+const entrada4 = prompt("Ingresa numeros separados por comas (pueden incluir negativos)");
+const numeros4 = entrada4.split(',').map(num => parseFloat(num.trim()));
+
+const resultado4 = filtrarYTransformar(numeros4);
+
+alert("Ejercicio 4: Filtrar y Transformar\n" +
+      "Array original: " + numeros4.join(", ") + "\n" +
+      "Suma de cuadrados de positivos: " + resultado4);
